@@ -81,7 +81,6 @@ header {
   position: fixed;
   padding-left: 3rem;
   padding-right: 3rem;
-  background-color: rgba(84, 57, 57, 0.5);
   transition: all 0.15s;
   z-index: 10;
   top: 0;
@@ -89,6 +88,13 @@ header {
   left: 0;
   box-sizing: border-box;
   height: 79px;
+  backdrop-filter: blur(0);
+  background-color: rgba(84, 57, 57, 0);
+  transition: all 0.15s;
+}
+
+header.scroll {
+  background-color: rgba(84, 57, 57, 0.5);
 }
 
 header > ul.flex {
@@ -146,10 +152,11 @@ header > ul.flex > li > .absolute > .logo {
 
 header > ul.flex h4 {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 16.8px;
   letter-spacing: 0;
   font-family: Object Sans Medium, times new roman;
+  font-weight: inherit;
 }
 
 header > ul.flex li ul li {
@@ -186,11 +193,11 @@ header > ul.flex li ul li {
   flex-wrap: wrap;
 }
 
-.main1 .pr-title .explore a {
+.main1 .explore a {
   display: flex;
 }
 
-.main1 .pr-title .explore a span {
+.main1 .explore a span {
   padding-top: 0.2rem;
   font-size: 1.4rem;
   color: #fff;
@@ -249,7 +256,6 @@ header > ul.flex li ul li {
   display: block;
   height: calc(100% + 1px);
   left: 50%;
-  opacity: 0;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
   transition: opacity 0.4s linear;
@@ -296,6 +302,82 @@ header > ul.flex li ul li {
 /* .main1 div img{
   width: calc(100% + 1px);
   height: calc(100% + 1px);
+} */
+
+/* .cursor {
+  height: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 0;
+  z-index: 120;
+} */
+
+.cursor {
+  position: absolute;
+  left: -100px;
+  top: -100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  user-select: none;
+  pointer-events: none;
+  transition:
+      background-color .2s,
+      border-color .2s,
+      transform .6s,
+      border-radius .2s;
+}
+
+/* .cursor--content {
+  position: absolute;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor span {
+  display: block;
+  height: 1.2rem;
+  position: relative;
+  width: 1.2rem;
+}
+
+.cursor span:before {
+  border-width: 1px;
+  transform: scale(0);
+}
+
+.cursor span:after,
+.cursor span:before {
+  border-radius: 9999px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+  will-change: transform;
+}
+
+.cursor span:after {
+  background-color: var(--pageText);
+  transform: scale(0.625);
+}
+
+.cursor.is-hovering span:before {
+  transform: scale(1);
+}
+
+.cursor.is-hovering span:after {
+  transform: scale(0.125);
 } */
 
 h2 {
@@ -389,7 +471,7 @@ p {
 
 .main3 {
   background-color: rgb(240, 233, 223);
-  height: 2290px;
+  height: 250vh;
   padding: 3rem;
   box-sizing: border-box;
 }
