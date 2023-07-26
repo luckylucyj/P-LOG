@@ -1,13 +1,4 @@
-// let arr=[1,2,3,4];
-// let index=0;
-// document.body.addEventListener('click',function(){
-//     console.log(arr[index]);
-//     index++;
-//     if(index===arr.length){
-//         index=0;
-//     }
-// });
-
+// 픽스드 헤더 시작
 window.addEventListener("scroll", () => {
   console.log(scrollY);
   if (scrollY > 465) {
@@ -16,76 +7,115 @@ window.addEventListener("scroll", () => {
     document.querySelector("header").classList.remove("scroll");
   }
 });
+//픽스드 헤더 끝남
 
-const cursor = document.querySelector("cursor");
-console.log(cursor);
+// 커서 바꾸기 시작
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
 
-const gml = document.querySelector(".h1-white"); //흰 글자
-const ptb = document.querySelector(".h1-brown"); //갈색 글자
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+});
+// 커서 바꾸기 끝남
 
-const main = document.querySelector("main"); // 메인1
-console.log(main);
+// 메인 1
+const firstSectionColor = [
+  "#5D9061",
+  "#D26A51",
+  "#ABA35A",
+  "#5561C7",
+  "#b2956d",
+];
 
-const prsec = document.querySelector(".pr-sec"); //그림만 있는 제일 부모의 div
-
-const gridF = document.querySelectorAll(".grid-car-f");
-console.log(gridF);
-const gridC = document.querySelectorAll("grid-car");
-const firstSectionImg = document.querySelectorAll(".grid-car-f figure");
-
-const firstSectionColor = ["#5D9061", "#D26A51", "#ABA35A", "#5561C7"];
 const firstText = [
   "Original green tea",
   "passionfruit&peach tea",
   "pineapple&mango tea",
   "blueberry&rasberry tea",
+  "Blood Orange & Hibiscus Tea",
 ];
+
+const secondText = [
+  "A clean take on a classic",
+  "Subtly sweet",
+  "Perfectly playful",
+  "Cool and refreshing",
+  "Crisp and easy",
+];
+
+const firstSectionImg = [
+  "Green tea packaging.png",
+  "Passionfruit & Peach Tea packaging.png",
+  "Pineapple & Mango packaging.png",
+  "Blueberry & Raspberry packaging.png",
+  "6f111ee96c01a436f6e3be2da3af301da516b4a8-800x1111.png",
+];
+
+const main = document.querySelector("main"); // 메인1
+const carousel = document.querySelector(".carousel");
+
+const white = document.querySelector(".white");
+const brown = document.querySelector(".brown");
 let index1 = 0;
 let index2 = 1;
-// const carousel = document.querySelector(".carousel");
-// makeClone();
+
+const slideCount = firstSectionImg.length;
+const slideWidth = document.querySelector(".ar img").width;
+console.log(slideWidth);
+
+const slides = document.querySelector(".slides");
+
+// main
+// main 클릭하면 배경색이 순서대로 바뀐다.
+// main 클릭하면 안의 캐러셀이 움직인다.
+
+white.innerText = firstText[index1];
+brown.innerText = secondText[index1];
+
+console.log("------dfsdfsdf");
 
 main.addEventListener("click", () => {
-  console.log("hello");
-  for (let i = 1; i < firstSectionColor.length; i++) {
-    main.style.backgroundColor = firstSectionColor[i];
-    // gml.innerText = firstText[i];
-    console.log(firstSectionColor);
-    console.log(i);
+  white.innerText = firstText[index1];
+  brown.innerText = secondText[index1];
+  main.style.backgroundColor = firstSectionColor[index1];
+
+  if (index1 === firstText.length - 1) {
+    index1 = -1;
   }
 
-//   let imgWidth = firstSectionImg[index].querySelector("img").width;
-  //   간격은 조절해야 함
-//   carousel.style.transform = `translate(${-imgWidth * index2}px,0%)`;
-//   carousel.style.transition = "1s";
-  //   for (let el of gridF) {
-  //     el.style.opacity = 0;
-  //   }
-  //   let imgWidth = firstSectionImg[index].querySelector("img").width;
-  //   //   간격은 조절해야 함
-  //   main1.style.transform = `translate(${-imgWidth * index2}px,0%)`;
-  //   main1.style.transition = "1s";
+  if (index2 === firstText.length) {
+    index2 = 0;
+  }
+  // moveSlide();
+  index1++;
+  index2++;
 
-  //   main1[index].style.opacity = 1;
-  //   main1.style.backgroundColor = firstSectionColor[index];
-  //   if ((index2 === firstSectionImg.length) == 1) {
-  //     setTimeout(function () {
-  //       carousel.style.transition = "0s";
-  //       carousel.style.transform = "translate(0%,0%)";
-  //     }, 1000);
-  //     index2 = 0;
-  //   }
-  //   index1++;
-  //   index2++;
-  //   if (index1 == sentences.length) {
-  //     index = 0;
-  //   }
-  //   console.log(index, index2);
+  let value = -(slideWidth*index2);
+  console.log(value);
+
+  function pos(){
+    slides.style.transform= 'translateX(' + value/15 + '%)';
+  }
+  pos();
 });
 
-// 1st, 2nd 뒤에 추가- 두번째도 보이기 떄문이다.
-// function makeClone1() {
-//   let cloneSlideFirst = firstSectionImg[0].cloneNode(true);
-//   let cloneSlideSecond = firstSectionImg[1].cloneNode(true);
-//   carousel.append(cloneSlideFirst, cloneSlideSecond);
-// }
+debugger;
+
+const sw = new Swiper(".swiper1", {
+  // direction:'vertical',
+  slidesPerView: 2,
+  spaceBetween: 0, //slide 간의 gap(margin)
+  loop: true,
+  autoplay: {
+    delay: 1000,
+  },
+  speed: 1000, //like transition
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+console.log(sw);
