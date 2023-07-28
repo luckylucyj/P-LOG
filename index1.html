@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- swiper CSS CDN -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+        <!-- swiper JS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <style>
+              article {
+        position: relative;
+        height: 100vh;
+        background-color: skyblue;
+        overflow: hidden;
+      }
+
+      article .swiper3 {
+        position: absolute;
+        /* left 는 자유롭게 설정해서 다음페이지 보이는 정도 결정 */
+        left: 40%;
+        /* 중앙 정렬 */
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+
+        /* height는 임의로 설정한 것이니 변경시켜주는것이 좋을 것 같습니다. */
+        height: 500px;
+      }
+      article .swiper3 img {
+        /* 하나의 스와이퍼 기준으로 왼쪽 정렬, position 이 아닌 다른 속성으로 하셔도 될 것 같습니다. */
+        position: absolute;
+        left: 0;
+      }
+        </style>
+</head>
+<body>
+    <article>
+        <div class="swiper swiper3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/Blueberry & Raspberry packaging.png" alt="" /></div>
+            <div class="swiper-slide"><img src="./img/Blueberry & Raspberry packaging.png" alt="" /></div>
+            <div class="swiper-slide"><img src="./img/Blueberry & Raspberry packaging.png" alt="" /></div>
+            <div class="swiper-slide"><img src="./img/Blueberry & Raspberry packaging.png" alt="" /></div>
+            <div class="swiper-slide"><img src="./img/Blueberry & Raspberry packaging.png" alt="" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </article>
+
+      <script>
+
+           // swiper 설정
+           const setSwiper3 = {
+    slidesPerView: 2, 
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+    },
+  };
+ const swiper3 = new Swiper('.swiper3', setSwiper3);
+ 
+ //article 누르면 동시에 next button 누르도록
+ const article = document.querySelector('article');
+ article.addEventListener('click', () => {
+    document.querySelector('.swiper3 .swiper-button-next').click();
+ });
+      </script>
+</body>
+</html>

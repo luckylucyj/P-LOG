@@ -62,8 +62,8 @@ let index1 = 0;
 let index2 = 1;
 
 const slideCount = firstSectionImg.length;
-const slideWidth = document.querySelector(".pr img").width;
-console.log(slideWidth);
+const slideWidth = document.querySelector("img").width;
+// console.log(slideWidth);
 
 const slides = document.querySelector(".slides");
 
@@ -81,7 +81,7 @@ main.addEventListener("click", () => {
   brown.innerText = secondText[index1];
   main.style.backgroundColor = firstSectionColor[index1];
 
-  slides.classList.add('animate');
+  // slides.classList.add('animate');
 
   if (index1 === firstText.length - 1) {
     index1 = -1;
@@ -96,23 +96,24 @@ main.addEventListener("click", () => {
 
   let value = -(slideWidth*index2);
 
-  function pos(){
-    slides.style.transform= 'translateX(' + value/12 + '%)';
-  }
-  pos();
+  // function pos(){
+  //   slides.style.transform= 'translateX(' + value/12 + '%)';
+  // }
+  // pos();
 
   if ((index2 === firstSectionImg.length) == 1) {
     setTimeout(function () {
       carousel.style.transition = "0s";
-      carousel.style.transform = "translate(0%,0%)";
+      slides.style.transform = "translate(0%,0%)";
       slides.style.transition='.5s';
       slides.classList.remove('animate');
     }, 500);
     index2 = 0;
   }
+
+  console.log(index1);
 });
 
-// debugger;
 
 // const sw = new Swiper(".swiper1", {
 //   // direction:'vertical',
@@ -130,3 +131,61 @@ main.addEventListener("click", () => {
 //   },
 // });
 // console.log(sw);
+
+const sw=new Swiper(".swiper1",{
+  // direction:'vertical',
+  slidesPerView:3,
+  spaceBetween: 6, //slide 간의 gap(margin)
+  loop: true,
+  autoplay:{
+      delay: 1000,
+  },
+  speed: 1000, //like transition
+
+  navigation:{
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  pagination:{
+      el:'.swiper-pagination',
+      clickable:true,
+  },
+  scrollbar:{
+      el:'.swiper-scrollbar',
+  },
+});
+
+const setSwiper2={
+  slidePerView:2,
+  loop: false,
+  speed: 5000,
+  navigation:{
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  //반응형
+  breakpoints:{
+      // 768보다 클 때
+      768:{
+          slidesPerView:4,
+      },
+  }
+};
+const sw2=new Swiper('.swiper2', setSwiper2);
+
+
+  // swiper 설정
+  const setSwiper3 = {
+    slidesPerView: 2, 
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+    },
+  };
+ const swiper3 = new Swiper('.swiper3', setSwiper3);
+ 
+ //article 누르면 동시에 next button 누르도록
+//  const article = document.querySelector('article');
+//  article.addEventListener('click', () => {
+//     document.querySelector('.swiper3 .swiper-button-next').click();
+//  });
