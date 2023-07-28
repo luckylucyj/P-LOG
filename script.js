@@ -184,8 +184,8 @@ const sw2=new Swiper('.swiper2', setSwiper2);
   };
  const swiper3 = new Swiper('.swiper3', setSwiper3);
  
- //article 누르면 동시에 next button 누르도록
-//  const article = document.querySelector('article');
-//  article.addEventListener('click', () => {
-//     document.querySelector('.swiper3 .swiper-button-next').click();
-//  });
+//  article 누르면 동시에 next button 누르도록
+ const article = document.querySelector('article');
+ article.addEventListener('click', () => {
+    document.querySelector('.swiper3 .swiper-button-next').click();
+ });
