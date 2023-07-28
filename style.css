@@ -218,6 +218,7 @@ main .carousel {
 main .carousel .slides {
   height: 100%;
   display: flex;
+  transition: .5s;
 }
 
 main .carousel .slides .slide-wrapper{

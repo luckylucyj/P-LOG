@@ -101,21 +101,21 @@ main.addEventListener("click", () => {
   pos();
 });
 
-debugger;
+// debugger;
 
-const sw = new Swiper(".swiper1", {
-  // direction:'vertical',
-  slidesPerView: 2,
-  spaceBetween: 0, //slide 간의 gap(margin)
-  loop: true,
-  autoplay: {
-    delay: 1000,
-  },
-  speed: 1000, //like transition
+// const sw = new Swiper(".swiper1", {
+//   // direction:'vertical',
+//   slidesPerView: 2,
+//   spaceBetween: 0, //slide 간의 gap(margin)
+//   loop: true,
+//   autoplay: {
+//     delay: 1000,
+//   },
+//   speed: 1000, //like transition
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-console.log(sw);
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
+// console.log(sw);
