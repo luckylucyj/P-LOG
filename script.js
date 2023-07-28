@@ -62,7 +62,7 @@ let index1 = 0;
 let index2 = 1;
 
 const slideCount = firstSectionImg.length;
-const slideWidth = document.querySelector(".ar img").width;
+const slideWidth = document.querySelector(".pr img").width;
 console.log(slideWidth);
 
 const slides = document.querySelector(".slides");
@@ -81,6 +81,8 @@ main.addEventListener("click", () => {
   brown.innerText = secondText[index1];
   main.style.backgroundColor = firstSectionColor[index1];
 
+  slides.classList.add('animate');
+
   if (index1 === firstText.length - 1) {
     index1 = -1;
   }
@@ -93,12 +95,21 @@ main.addEventListener("click", () => {
   index2++;
 
   let value = -(slideWidth*index2);
-  console.log(value);
 
   function pos(){
-    slides.style.transform= 'translateX(' + value/15 + '%)';
+    slides.style.transform= 'translateX(' + value/12 + '%)';
   }
   pos();
+
+  if ((index2 === firstSectionImg.length) == 1) {
+    setTimeout(function () {
+      carousel.style.transition = "0s";
+      carousel.style.transform = "translate(0%,0%)";
+      slides.style.transition='.5s';
+      slides.classList.remove('animate');
+    }, 500);
+    index2 = 0;
+  }
 });
 
 // debugger;

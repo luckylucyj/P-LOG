@@ -218,6 +218,9 @@ main .carousel {
 main .carousel .slides {
   height: 100%;
   display: flex;
+}
+
+main .carousel .slides.animate{
   transition: .5s;
 }
 
@@ -298,7 +301,7 @@ body{
   padding-top: 138.86363636363637%;
 }
 
-.ar{
+.pr{
   position: relative;
   overflow: hidden;
 }
