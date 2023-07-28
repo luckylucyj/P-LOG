@@ -101,15 +101,15 @@ main.addEventListener("click", () => {
   // }
   // pos();
 
-  if ((index2 === firstSectionImg.length) == 1) {
-    setTimeout(function () {
-      carousel.style.transition = "0s";
-      slides.style.transform = "translate(0%,0%)";
-      slides.style.transition='.5s';
-      slides.classList.remove('animate');
-    }, 500);
-    index2 = 0;
-  }
+  // if ((index2 === firstSectionImg.length) == 1) {
+  //   setTimeout(function () {
+  //     carousel.style.transition = "0s";
+  //     slides.style.transform = "translate(0%,0%)";
+  //     slides.style.transition='.5s';
+  //     slides.classList.remove('animate');
+  //   }, 500);
+  //   index2 = 0;
+  // }
 
   console.log(index1);
 });
@@ -177,7 +177,8 @@ const sw2=new Swiper('.swiper2', setSwiper2);
   // swiper 설정
   const setSwiper3 = {
     slidesPerView: 2, 
-    loop: true,
+    loop: false,
+    speed : 1000,
     navigation: {
       nextEl: '.swiper-button-next',
     },

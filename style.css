@@ -706,6 +706,7 @@ article .swiper3 {
 
   /* height는 임의로 설정한 것이니 변경시켜주는것이 좋을 것 같습니다. */
   height: 500px;
+  width: 100%;
 }
 article .swiper3 img {
   /* 하나의 스와이퍼 기준으로 왼쪽 정렬, position 이 아닌 다른 속성으로 하셔도 될 것 같습니다. */
