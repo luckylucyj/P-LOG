@@ -204,8 +204,11 @@ main .sentences .visible h1 {
 main .sentences .white {
   color: white;
   margin-bottom: 23rem;
+  display: none;
 }
-
+main .sentences .white.show{
+  display: block;
+}
 main .sentences .brown {
   color: rgb(213, 204, 190);
 }
@@ -397,7 +400,7 @@ p {
 
 .main3 {
   background-color: rgb(240, 233, 223);
-  height: 250vh;
+  height: 260vh;
   padding: 3rem;
   box-sizing: border-box;
 }

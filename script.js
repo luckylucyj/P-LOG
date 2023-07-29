@@ -56,7 +56,7 @@ const firstSectionImg = [
 const main = document.querySelector("main"); // 메인1
 const carousel = document.querySelector(".carousel");
 
-const white = document.querySelector(".white");
+const white = document.querySelectorAll(".white");
 const brown = document.querySelector(".brown");
 let index1 = 0;
 let index2 = 1;
@@ -111,19 +111,21 @@ const sw=new Swiper(".swiper1",{
  const swiper3 = new Swiper('.swiper3', setSwiper3);
 
 main.addEventListener("click", () => {
-  white.innerText = firstText[index1];
+  console.log(white[index1]);
+  // document.querySelector('.show').classList.remove('show');
+  white[index1].classList.add('show');
+  // white.innerText = firstText[index1];
   brown.innerText = secondText[index1];
   main.style.backgroundColor = firstSectionColor[index1];
 
 
-  if (index1 === firstText.length - 1) {
-    index1 = -1;
+  if (index1 === firstText.length) {
+    index1 = 0;
   }
 
   // moveSlide();
   index1++;
   document.querySelector('.swiper3 .swiper-button-next').click();
-  console.log('click');
   // let value = -(slideWidth*index2);
 
   // function pos(){
