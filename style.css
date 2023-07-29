@@ -186,7 +186,6 @@ main .sentences .visible {
   display: flex;
   top: 50%;
   align-items: center;
-
 }
 
 main .sentences .visible h1 {
@@ -201,7 +200,6 @@ main .sentences .visible h1 {
 /* .op{
   opacity: 1;
 } */
-
 
 main .sentences .white {
   color: white;
@@ -222,23 +220,23 @@ main .carousel .slides {
   display: flex;
 }
 
-main .carousel .slides.animate{
-  transition: .5s;
+main .carousel .slides.animate {
+  transition: 0.5s;
 }
 
-main .carousel .slides .slide-wrapper{
-  grid-template-columns: repeat(4,minmax(0,1fr));
+main .carousel .slides .slide-wrapper {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   flex: 0 0 85%;
   display: grid;
 }
 
-main .carousel .slides .slide-wrapper .slide{
-  grid-column: span 2/span 2;
+main .carousel .slides .slide-wrapper .slide {
+  grid-column: span 2 / span 2;
   align-items: center;
   display: flex;
 }
 
-main .carousel .slides .slide-wrapper .slide figure{
+main .carousel .slides .slide-wrapper .slide figure {
   width: 100%;
 }
 
@@ -264,7 +262,7 @@ main .explore a .w-11 svg {
   padding-right: 0.8rem;
 }
 
-body{
+body {
   position: relative;
 }
 
@@ -283,27 +281,27 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-.cursor-content{
+.cursor-content {
   position: absolute;
   font-family: Object Sans Medium, times new roman;
 }
 
-.main1 .slide-wrapper .slide figure{
+.main1 .slide-wrapper .slide figure {
   width: 100%;
   margin: 0;
   position: relative;
 }
 
-.op{
+.op {
   overflow: hidden;
   position: relative;
   padding-top: 138.86363636363637%;
 }
 
-.pr{
+.pr {
   position: relative;
   overflow: hidden;
 }
@@ -673,19 +671,13 @@ footer .sign-link p {
   padding-top: 1rem;
 }
 
-
-@keyframes colors{
-  0%{
-    filter:hue-rotate(0deg);
+@keyframes colors {
+  0% {
+    filter: hue-rotate(0deg);
   }
-  100%{
+  100% {
     filter: hue-rotate(360deg);
   }
-}
-
-.swiper1 .swiper-button-prev,
-.swiper1 .swiper-button-next{
-    color: transparent;
 }
 
 /* 엘리 리더님이 보내주신 코드 */
@@ -720,37 +712,16 @@ article .swiper3 img {
   left: 0; */
 }
 
-.swiper-slide:first-child{
-  border: 1px solid red;
-}
-
-.swiper-slide:nth-child(2){
-  border: 1px solid orange;
-}
-
-.swiper-slide:nth-child(3){
-  border: 1px solid yellow;
-}
-.swiper-slide:nth-child(4){
-  border: 1px solid yellowgreen;
-}
-
-.swiper-slide:last-child{
-  border: 1px solid blue;
-}
-
-
-main .swiper3 .swiper-wrapper{
+main .swiper3 .swiper-wrapper {
   position: absolute;
 }
 
-
-main .swiper3 .swiper-wrapper .swiper-slide{
+main .swiper3 .swiper-wrapper .swiper-slide {
   display: flex;
-    flex: 0 0 85%;
-    left: 14%;
+  flex: 0 0 85%;
+  left: 14%;
 }
-/* .swiper3 .slides {
-  height: 100%;
-  display: flex;
-} */
+
+.swiper3 .swiper-button-next {
+  color: transparent;
+}
