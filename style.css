@@ -204,7 +204,7 @@ main .sentences .visible h1 {
 main .sentences .white {
   color: white;
   margin-bottom: 23rem;
-  display: none;
+  /* display: none; */
 }
 main .sentences .white.show{
   display: block;
@@ -722,7 +722,6 @@ main .swiper3 .swiper-wrapper {
 main .swiper3 .swiper-wrapper .swiper-slide {
   display: flex;
   flex: 0 0 85%;
-  left: 14%;
 }
 
 .swiper3 .swiper-button-next {

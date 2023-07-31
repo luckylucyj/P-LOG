@@ -56,14 +56,14 @@ const firstSectionImg = [
 const main = document.querySelector("main"); // 메인1
 const carousel = document.querySelector(".carousel");
 
-const white = document.querySelectorAll(".white");
+const white = document.querySelector(".white");
 const brown = document.querySelector(".brown");
+
 let index1 = 0;
 let index2 = 1;
 
 const slideCount = firstSectionImg.length;
 const slideWidth = document.querySelector("img").width;
-// console.log(slideWidth);
 
 const slides = document.querySelector(".slides");
 
@@ -75,8 +75,9 @@ white.innerText = firstText[index1];
 brown.innerText = secondText[index1];
 
 console.log("------dfsdfsdf");
+
+// swiper 설정 넣으니 잘됨
 const sw=new Swiper(".swiper1",{
-  // direction:'vertical',
   slidesPerView:3,
   spaceBetween: 6, //slide 간의 gap(margin)
   loop: true,
@@ -110,64 +111,42 @@ const sw=new Swiper(".swiper1",{
   };
  const swiper3 = new Swiper('.swiper3', setSwiper3);
 
-main.addEventListener("click", () => {
-  console.log(white[index1]);
-  // document.querySelector('.show').classList.remove('show');
-  white[index1].classList.add('show');
-  // white.innerText = firstText[index1];
-  brown.innerText = secondText[index1];
+ main.addEventListener("click", () => {
+   
+   white.innerText = firstText[index1];
+   brown.innerText = secondText[index1];
+   main.style.backgroundColor = firstSectionColor[index1];
+   
+  //  const show = document.querySelector('.show.white');
+  //  if(show) {
+  //    show.classList.remove('show');
+  //  }
+
+  // if (index1 === firstText.length) {
+  //   index1 = 0;
+  // }
+
+
+  // white[index1].classList.add('show');
+
   main.style.backgroundColor = firstSectionColor[index1];
 
-
+  // first text 개수 만큼 변경을 하고 싶다면 .white의 갯수와 일치 해야합니다.
   if (index1 === firstText.length) {
-    index1 = 0;
+    index1 = -1;
   }
 
-  // moveSlide();
+  // 만약 show가 클릭할 때마다 위치가 변경되길 원한다면
+  // if (index1 < white.length -1) { 
+  //   // length-1인 이유는 마지막 인덱스는 length-1이기 때문에
+  // } else {
+  //   index1 = 0;
+  // }
   index1++;
+
+
   document.querySelector('.swiper3 .swiper-button-next').click();
-  // let value = -(slideWidth*index2);
 
-  // function pos(){
-  //   slides.style.transform= 'translateX(' + value/12 + '%)';
-  // }
-  // pos();
-
-  // if ((index2 === firstSectionImg.length) == 1) {
-  //   setTimeout(function () {
-  //     carousel.style.transition = "0s";
-  //     slides.style.transform = "translate(0%,0%)";
-  //     slides.style.transition='.5s';
-  //     slides.classList.remove('animate');
-  //   }, 500);
-  //   index2 = 0;
-  // }
 
   console.log(index1);
 });
-
-
-// const sw = new Swiper(".swiper1", {
-//   // direction:'vertical',
-//   slidesPerView: 2,
-//   spaceBetween: 0, //slide 간의 gap(margin)
-//   loop: true,
-//   autoplay: {
-//     delay: 1000,
-//   },
-//   speed: 1000, //like transition
-
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
-// console.log(sw);
-
-
- 
-
-//  main.addEventListener('click', () => {
-//     document.querySelector('.swiper3 .swiper-button-next').click();
-//     console.log('click');
-//  });
