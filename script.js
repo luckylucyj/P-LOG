@@ -126,11 +126,11 @@ main.addEventListener("click", () => {
 
   // document.querySelector('.swiper3 .swiper-button-next').click();
 
-  document
-    .querySelector(".swiper3 .swiper-button-next")
-    .addEventListener("click", () => {
-      index1 = index1;
-    });
+  // document
+  //   .querySelector(".swiper3 .swiper-button-next")
+  //   .addEventListener("click", () => {
+  //     index1 = index1;
+  //   });
 
   console.log(index1);
 });
