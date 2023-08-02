@@ -31,9 +31,9 @@ const firstSectionColor = [
 
 const firstText = [
   "Original green tea",
-  "passionfruit&peach tea",
-  "pineapple&mango tea",
-  "blueberry&rasberry tea",
+  "passionfruit & peach tea",
+  "pineapple & mango tea",
+  "blueberry & rasberry tea",
   "Blood Orange & Hibiscus Tea",
 ];
 
@@ -77,76 +77,65 @@ brown.innerText = secondText[index1];
 console.log("------dfsdfsdf");
 
 // swiper 설정 넣으니 잘됨
-const sw=new Swiper(".swiper1",{
-  slidesPerView:3,
+const sw = new Swiper(".swiper1", {
+  slidesPerView: 3,
   spaceBetween: 6, //slide 간의 gap(margin)
   loop: true,
-  autoplay:{
-      delay: 1000,
+  autoplay: {
+    delay: 1000,
   },
   speed: 1000, //like transition
 
-  navigation:{
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
-  pagination:{
-      el:'.swiper-pagination',
-      clickable:true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
   },
-  scrollbar:{
-      el:'.swiper-scrollbar',
+  scrollbar: {
+    el: ".swiper-scrollbar",
   },
 });
 
+// swiper 설정
+const setSwiper3 = {
+  slidesPerView: 1.3,
+  loop: true,
+  speed: 500,
+  navigation: {
+    nextEl: ".swiper-button-next",
+  },
+};
 
-  // swiper 설정
-  const setSwiper3 = {
-    slidesPerView: 2, 
-    loop: true,
-    speed : 500,
-    navigation: {
-      nextEl: '.swiper-button-next',
-    },
-  };
- const swiper3 = new Swiper('.swiper3', setSwiper3);
+const swiper3 = new Swiper(".swiper3", setSwiper3);
 
- main.addEventListener("click", () => {
-   
-   white.innerText = firstText[index1];
-   brown.innerText = secondText[index1];
-   main.style.backgroundColor = firstSectionColor[index1];
-   
-  //  const show = document.querySelector('.show.white');
-  //  if(show) {
-  //    show.classList.remove('show');
-  //  }
-
-  // if (index1 === firstText.length) {
-  //   index1 = 0;
-  // }
-
-
-  // white[index1].classList.add('show');
-
+main.addEventListener("click", () => {
+  white.innerText = firstText[index1];
+  brown.innerText = secondText[index1];
   main.style.backgroundColor = firstSectionColor[index1];
 
   // first text 개수 만큼 변경을 하고 싶다면 .white의 갯수와 일치 해야합니다.
-  if (index1 === firstText.length) {
-    index1 = -1;
-  }
 
-  // 만약 show가 클릭할 때마다 위치가 변경되길 원한다면
-  // if (index1 < white.length -1) { 
-  //   // length-1인 이유는 마지막 인덱스는 length-1이기 때문에
-  // } else {
-  //   index1 = 0;
-  // }
   index1++;
 
+  if (index1 === firstText.length) {
+    index1 = 0;
+  }
 
-  document.querySelector('.swiper3 .swiper-button-next').click();
+  // document.querySelector('.swiper3 .swiper-button-next').click();
 
+  document
+    .querySelector(".swiper3 .swiper-button-next")
+    .addEventListener("click", () => {
+      index1 = index1;
+    });
 
   console.log(index1);
 });
+
+function onClick() {
+  document.querySelector(".swiper3 .swiper-button-next").click();
+  index1 = index1;
+}

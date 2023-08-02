@@ -175,13 +175,13 @@ main .sentences {
   align-items: flex-start;
   height: 100%;
   z-index: 3;
-  white-space: wrap;
+  white-space: normal;
   position: relative;
 }
 
 main .sentences .visible {
   opacity: 1;
-  width: inherit;
+  width: 100%;
   position: absolute;
   display: flex;
   top: 50%;
@@ -206,7 +206,7 @@ main .sentences .white {
   margin-bottom: 23rem;
   /* display: none; */
 }
-main .sentences .white.show{
+main .sentences .white.show {
   display: block;
 }
 main .sentences .brown {
@@ -721,8 +721,16 @@ main .swiper3 .swiper-wrapper {
 
 main .swiper3 .swiper-wrapper .swiper-slide {
   display: flex;
-  flex: 0 0 85%;
+  /* flex: 0 0 85%; */
 }
+
+/* main .swiper3 .swiper-wrapper .swiper-slide:nth-child(3n){
+  left: -14%;
+} */
+
+/* main .swiper3 .swiper-wrapper .swiper-slide:nth-child(2),.swiper-slide-active{
+  left: -35%;
+} */
 
 .swiper3 .swiper-button-next {
   color: transparent;
