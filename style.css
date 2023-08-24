@@ -73,7 +73,7 @@ h4 {
   width: 100%;
   height: 100vh;
   background-color: rgb(93 144 97);
-  padding: 3rem;
+  padding: 3rem 0 3rem 0rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -82,7 +82,7 @@ h4 {
 header {
   position: fixed;
   padding-left: 3rem;
-  padding-right: 3rem;
+  padding-right: 1.5rem;
   transition: all 0.15s;
   z-index: 10;
   top: 0;
@@ -117,7 +117,7 @@ header > ul.flex > li > ul > li {
 }
 
 header > ul.flex > li > ul > li:not(:first-child) {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 header > ul.flex > li > ul > li {
@@ -137,26 +137,27 @@ header > ul.flex > li > .absolute {
 
 header > ul.flex > li.hd-btn {
   border: 1px solid #fff;
-  padding: 1.8rem;
+  padding: 2rem 1.8rem;
   box-sizing: border-box;
   border-radius: 0.375rem;
 }
 
 header > ul.flex > li.hd-btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: 0.3s;
 }
 
 header > ul.flex > li > .absolute > .logo {
-  width: 28.3rem;
+  width: 25.3rem;
   height: 3rem;
+  margin-top: 10px;
 }
 
 header > ul.flex h4 {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   line-height: 16.8px;
-  letter-spacing: 0;
+  letter-spacing: 0px;
   font-family: Object Sans Medium, times new roman;
   font-weight: inherit;
 }
@@ -182,20 +183,23 @@ main .sentences {
 main .sentences .visible {
   opacity: 1;
   width: 100%;
-  position: absolute;
+  /* position: absolute;
+  top: 50%; */
+  position: relative;
   display: flex;
-  top: 50%;
   align-items: center;
+  flex-direction: column;
+  padding-left: 3rem;
 }
 
 main .sentences .visible h1 {
   font-family: Object Sans Heavy, times new roman;
-  font-size: 6.2rem;
+  font-size: 6rem;
   letter-spacing: -1px;
-  line-height: 50px;
+  line-height: 4.7rem;
   text-transform: uppercase;
   opacity: 1;
-  position: absolute;
+  position: relative;
 }
 /* .op{
   opacity: 1;
@@ -203,8 +207,6 @@ main .sentences .visible h1 {
 
 main .sentences .white {
   color: white;
-  margin-bottom: 23rem;
-  /* display: none; */
 }
 main .sentences .white.show {
   display: block;
@@ -336,10 +338,17 @@ h2 {
 }
 
 .main2 .fruit-round img {
-  /* height: 705px;
-  width: 466px; */
-  height: calc(100% + 1px);
-  width: calc(100% + 1px);
+  /* height: calc(100% + 1px);
+  width: calc(100% + 1px); */
+  /* display: block;
+    height: calc(100% + 1px);
+    left: 50%;
+    opacity: 1;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+    transition: opacity .4s linear;
+    width: calc(100% + 1px);
+    position: absolute; */
 }
 
 .grid {
@@ -422,8 +431,12 @@ p {
   padding-top: 1.6rem;
 }
 
-.main3 h1 {
-  width: 60%;
+section h1 {
+  font-size: 6.2rem;
+  letter-spacing: -1px;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-family: Object Sans Heavy, times new roman;
 }
 
 .d-b {
@@ -445,10 +458,39 @@ p {
   cursor: pointer;
 }
 
-.main3 .grid-p div img {
+.main3 .grid-p .inner .blur {
+  position: relative;
+}
+
+.main3 .grid-p .inner .blur p {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 20px;
+  font-family: Object Sans Medium, times new roman;
+}
+
+.main3 .grid-p .inner .blur:hover p {
+  display: block;
+}
+
+.main3 .grid-p .inner .blur img {
   width: calc(100% + 1px);
   height: calc(100% + 1px);
 }
+
+section h1 
+
+/* .main3 .grid-p div img {
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+} */
 
 .uppercase {
   text-transform: uppercase;
@@ -693,20 +735,13 @@ article {
 }
 
 main .swiper3 {
-  border: 1px solid purple;
   position: relative;
-  /* left 는 자유롭게 설정해서 다음페이지 보이는 정도 결정 */
-  left: 0%;
-  /* 중앙 정렬 */
-  top: 0;
-  bottom: 0;
+  left: 10%;
+  top: 6%;
   margin: auto 0;
   grid-column: span 8 / span 8;
   display: flex;
   height: 100%;
-  /* height는 임의로 설정한 것이니 변경시켜주는것이 좋을 것 같습니다. */
-  /* height: 100%;
-grid-column: span 8/ span 8; */
 }
 
 article .swiper3 img {
@@ -721,17 +756,103 @@ main .swiper3 .swiper-wrapper {
 
 main .swiper3 .swiper-wrapper .swiper-slide {
   display: flex;
-  /* flex: 0 0 85%; */
+  height: 88%;
 }
-
-/* main .swiper3 .swiper-wrapper .swiper-slide:nth-child(3n){
-  left: -14%;
-} */
-
-/* main .swiper3 .swiper-wrapper .swiper-slide:nth-child(2),.swiper-slide-active{
-  left: -35%;
-} */
 
 .swiper3 .swiper-button-next {
   color: transparent;
+}
+
+@media screen and (max-width: 1270px) {
+.header > ul.flex li a h4 {
+  font-size: 1rem;
+}
+.explore{
+  padding-left: 3rem;
+}
+
+header > ul.flex > li > .absolute > .logo{
+  width: 20.3rem;
+}
+
+.grid2{
+  grid-template-columns: repeat(4,minmax(0,1fr));
+}
+
+.main2 .main2-tit {
+  font-size: 2.4rem;
+  line-height: 24px;
+  width: 100%;
+}
+
+.main2 .grid-le {
+  grid-column: 1/4;
+}
+
+.main2 .grid-le .grid-leaf .grid-ri {
+  margin-top: 0;
+}
+
+
+}
+
+/* @media screen and (max-width: 1352px) {
+  main .sentences .visible{
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 1345px) {
+  main .sentences .visible{
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 1202px) {
+  main .sentences .visible{
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 1176px) {
+  main .sentences .visible{
+    padding-left: 0;
+  }
+} */
+
+@media screen and (max-width: 968px) {
+  main .swiper3 .swiper-wrapper .swiper-slide {
+    flex: 0 0 85%;
+    object-fit: cover;
+  }
+
+  main .swiper3 .swiper-wrapper .swiper-slide img {
+    width: 40vw;
+  }
+
+  main .sentences .visible h1 {
+    font-size: 4.2rem;
+  }
+
+  main .mobile_main{
+    display: block;
+  }
+  
+  main .sentences {
+    display: none;
+  }
+
+  .mobile_main .sentences.show{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 658px) {
+  main .swiper3 .swiper-wrapper .swiper-slide img {
+    width: 25vw;
+  }
+
+  main .sentences .visible h1 {
+    font-size: 4.2rem;
+  }
 }

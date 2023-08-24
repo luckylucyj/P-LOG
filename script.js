@@ -45,14 +45,6 @@ const secondText = [
   "Crisp and easy",
 ];
 
-const firstSectionImg = [
-  "Green tea packaging.png",
-  "Passionfruit & Peach Tea packaging.png",
-  "Pineapple & Mango packaging.png",
-  "Blueberry & Raspberry packaging.png",
-  "6f111ee96c01a436f6e3be2da3af301da516b4a8-800x1111.png",
-];
-
 const main = document.querySelector("main"); // 메인1
 const carousel = document.querySelector(".carousel");
 
@@ -60,12 +52,11 @@ const white = document.querySelector(".white");
 const brown = document.querySelector(".brown");
 
 let index1 = 0;
-let index2 = 1;
 
-const slideCount = firstSectionImg.length;
-const slideWidth = document.querySelector("img").width;
+// const slideCount = firstSectionImg.length;
+// const slideWidth = document.querySelector("img").width;
 
-const slides = document.querySelector(".slides");
+// const slides = document.querySelector(".slides");
 
 // main
 // main 클릭하면 배경색이 순서대로 바뀐다.
@@ -88,14 +79,7 @@ const sw = new Swiper(".swiper1", {
 
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  scrollbar: {
-    el: ".swiper-scrollbar",
+    // prevEl: ".swiper-button-prev",
   },
 });
 
@@ -107,35 +91,55 @@ const setSwiper3 = {
   navigation: {
     nextEl: ".swiper-button-next",
   },
+
+  on: {
+    // 다음페이지로 넘어가기 되면 실행하는 메소드
+    slideChangeTransitionStart: function () {
+  main.style.backgroundColor = firstSectionColor[index1];
+
+      //글자 변경
+      white.innerText = firstText[index1];
+      brown.innerText = secondText[index1];
+      index++;
+
+      if (index1 === firstText.length) {
+        index1 = 0;
+      }
+    },
+  }
 };
 
 const swiper3 = new Swiper(".swiper3", setSwiper3);
 
+// main 
 main.addEventListener("click", () => {
-  white.innerText = firstText[index1];
-  brown.innerText = secondText[index1];
-  main.style.backgroundColor = firstSectionColor[index1];
+  // index1++;
+  // white.innerText = firstText[index1];
+  // brown.innerText = secondText[index1];
 
-  // first text 개수 만큼 변경을 하고 싶다면 .white의 갯수와 일치 해야합니다.
+  // main.style.backgroundColor = firstSectionColor[index1];
 
-  index1++;
+  // // first text 개수 만큼 변경을 하고 싶다면 .white의 갯수와 일치 해야합니다.
+  
 
-  if (index1 === firstText.length) {
-    index1 = 0;
-  }
+  // if (index1 === firstText.length) {
+  //   index1 = 0;
+  // }
 
-  // document.querySelector('.swiper3 .swiper-button-next').click();
+  document.querySelector(".swiper3 .swiper-button-next").click();
 
-  // document
-  //   .querySelector(".swiper3 .swiper-button-next")
-  //   .addEventListener("click", () => {
-  //     index1 = index1;
-  //   });
-
-  console.log(index1);
 });
 
-function onClick() {
-  document.querySelector(".swiper3 .swiper-button-next").click();
-  index1 = index1;
-}
+  document.querySelector(".swiper3 .swiper-button-next").addEventListener('click',()=>{
+    index1++;
+
+    if (index1 === firstText.length) {
+      index1 = 0;
+    }
+
+    console.log(index1);
+    white.innerText = firstText[index1];
+    brown.innerText = secondText[index1];
+    main.style.backgroundColor = firstSectionColor[index1];
+  });
+
