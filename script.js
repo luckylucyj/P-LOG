@@ -51,6 +51,11 @@ const carousel = document.querySelector(".carousel");
 const white = document.querySelector(".white");
 const brown = document.querySelector(".brown");
 
+let mobWhite=document.querySelector('main .sentences.show .visible .white');
+let mobBrown=document.querySelector('main .sentences.show .visible .brown');
+
+
+
 let index1 = 0;
 
 // const slideCount = firstSectionImg.length;
@@ -64,6 +69,9 @@ let index1 = 0;
 
 white.innerText = firstText[index1];
 brown.innerText = secondText[index1];
+
+mobWhite.innerText = firstText[index1];
+mobBrown.innerText = secondText[index1];
 
 console.log("------dfsdfsdf");
 
@@ -100,6 +108,10 @@ const setSwiper3 = {
       //글자 변경
       white.innerText = firstText[index1];
       brown.innerText = secondText[index1];
+
+      mobWhite.innerText = firstText[index1];
+      mobBrown.innerText = secondText[index1];
+
       index++;
 
       if (index1 === firstText.length) {
@@ -140,6 +152,10 @@ main.addEventListener("click", () => {
     console.log(index1);
     white.innerText = firstText[index1];
     brown.innerText = secondText[index1];
+
+    mobWhite.innerText = firstText[index1];
+    mobBrown.innerText = secondText[index1];
+    
     main.style.backgroundColor = firstSectionColor[index1];
   });
 
