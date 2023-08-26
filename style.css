@@ -187,16 +187,16 @@ main .sentences .visible {
   top: 50%; */
   position: relative;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   padding-left: 3rem;
 }
 
 main .sentences .visible h1 {
   font-family: Object Sans Heavy, times new roman;
-  font-size: 6rem;
+  font-size: 6.2rem;
   letter-spacing: -1px;
-  line-height: 4.7rem;
+  line-height: 50px;
   text-transform: uppercase;
   opacity: 1;
   position: relative;
@@ -213,6 +213,10 @@ main .sentences .white.show {
 }
 main .sentences .brown {
   color: rgb(213, 204, 190);
+}
+
+main .sentences .explore{
+  padding-left: 3rem;
 }
 
 main .carousel {
@@ -737,7 +741,7 @@ article {
 main .swiper3 {
   position: relative;
   left: 10%;
-  top: 6%;
+  top: 8%;
   margin: auto 0;
   grid-column: span 8 / span 8;
   display: flex;
@@ -782,7 +786,8 @@ main .swiper3 .swiper-wrapper .swiper-slide {
   .main2 .main2-tit {
     font-size: 2.4rem;
     line-height: 24px;
-    width: 100%;
+    width: 96vw;
+    letter-spacing: -1px;
   }
 
   .main2 .grid-le {
@@ -818,22 +823,24 @@ main .swiper3 .swiper-wrapper .swiper-slide {
   }
 } */
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 765px) {
   main .swiper3 .swiper-wrapper .swiper-slide {
     flex: 0 0 85%;
     object-fit: cover;
   }
 
-  main .swiper3 .swiper-wrapper .swiper-slide img {
-    width: 40vw;
-  }
+
+main .swiper3 .swiper-wrapper {
+    position: relative;
+}
 
   main .sentences .visible h1 {
     font-size: 4.2rem;
   }
 
-  main .mobile_main {
-    display: block;
+  main .mobile_main{
+    display: grid;
+    width: 90vw;
   }
 
   main .sentences {
@@ -843,6 +850,66 @@ main .swiper3 .swiper-wrapper .swiper-slide {
   .mobile_main .sentences.show {
     display: flex;
   }
+
+  main .swiper3{
+    height: 85%;
+  }
+
+  main .swiper3 .swiper-wrapper .swiper-slide {
+    flex: 0 0 85%;
+    object-fit: cover;
+    grid-template-columns: repeat(8,minmax(0,1fr));
+    display: grid;
+    height: 85%;
+  }
+
+  main .swiper3 .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 85%;
+  grid-column: span 5/span 5;
+  display: flex;
+  align-items: center;
+  }
+
+  .main2.grid2 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    position: relative;
+}
+
+.main2 .grid-le {
+    /* grid-column: 1/4; */
+    height: 100%;
+}
+
+.main2 .grid-le .grid-leaf {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 3rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.main2{
+  height: 1040px;
+  position: relative;
+}
+
+.main2 .fruit-round {
+    /* grid-column: 1 / span 4; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+  /* .main2 .fruit-round {
+    grid-column: 5 / span 4;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+} */
+
+  .main2 .fruit-round img {
+    width: 70%;
+
+}
 }
 
 @media screen and (max-width: 658px) {
