@@ -50,6 +50,10 @@ html {
   padding: 0;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -786,6 +790,9 @@ main .swiper3 .swiper-wrapper .swiper-slide {
 .swiper3 .swiper-button-next {
   color: transparent;
 }
+.flex.mobile{
+  display: none;
+}
 
 .flex.mobile_main {
   display: none;
@@ -1045,7 +1052,7 @@ footer .sign-link .link-form input[type="submit"]{
   }
 
   header {
-    height: 11%;
+    height: 14%;
     padding: 0 3rem;
   }
 
@@ -1093,6 +1100,11 @@ footer .sign-link .link-form input[type="submit"]{
   footer .sign-link .link-form {
     width: 100%;
     padding-bottom: 0.5rem;
+  }
+
+  .flex.mobile{
+    display: flex;
+    
   }
 }
 
