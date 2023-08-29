@@ -94,6 +94,7 @@ const sw = new Swiper(".swiper1", {
 // swiper 설정
 const setSwiper3 = {
   slidesPerView: 1.3,
+  spaceBetween: 0,
   loop: true,
   speed: 500,
   navigation: {
@@ -155,7 +156,22 @@ main.addEventListener("click", () => {
 
     mobWhite.innerText = firstText[index1];
     mobBrown.innerText = secondText[index1];
-    
+
     main.style.backgroundColor = firstSectionColor[index1];
   });
 
+
+  document.querySelector('header .flex.mobile li span').addEventListener('click',()=>{
+    document.querySelector('.m-menu-wrap').classList.toggle('fade');
+    document.querySelector('.m-menu').classList.toggle('fade');
+  })
+  
+  document.querySelector('.m-menu .flex-r .close-icon span').addEventListener('click',()=>{
+    document.querySelector('.m-menu-wrap').classList.toggle('fade');
+    document.querySelector('.m-menu').classList.toggle('fade');
+  })
+  
+  document.querySelector('.flex.header_none li ul li:first-child').addEventListener('click',()=>{
+    document.querySelector('.m-menu-wrap').classList.toggle('fade');
+    document.querySelector('.m-menu').classList.toggle('fade');
+  })
