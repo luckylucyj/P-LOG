@@ -1,3 +1,14 @@
+const cursor = document.querySelector(".cursor");
+// 커서 바꾸기 시작
+document.addEventListener("mousemove", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+});
+// 커서 바꾸기 끝남
+
 // 픽스드 헤더 시작
 window.addEventListener("scroll", () => {
   console.log(scrollY);
@@ -8,17 +19,6 @@ window.addEventListener("scroll", () => {
   }
 });
 //픽스드 헤더 끝남
-
-// 커서 바꾸기 시작
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", (e) => {
-  let x = e.pageX;
-  let y = e.pageY;
-
-  cursor.style.top = y + "px";
-  cursor.style.left = x + "px";
-});
-// 커서 바꾸기 끝남
 
 // 메인 1
 const firstSectionColor = [
@@ -164,14 +164,20 @@ main.addEventListener("click", () => {
   document.querySelector('header .flex.mobile li span').addEventListener('click',()=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
+    document.querySelector('.cursor').classList.toggle('fade');
+    document.querySelector('.flex-r.whole').classList.toggle('fade');
   })
   
   document.querySelector('.m-menu .flex-r .close-icon span').addEventListener('click',()=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
+    document.querySelector('.cursor').classList.toggle('fade');
+    document.querySelector('.flex-r.whole').classList.toggle('fade');
   })
   
   document.querySelector('.flex.header_none li ul li:first-child').addEventListener('click',()=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
+    document.querySelector('.cursor').classList.toggle('fade');
+    document.querySelector('.flex-r.whole').classList.toggle('fade');
   })
