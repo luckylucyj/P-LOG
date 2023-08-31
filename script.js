@@ -181,3 +181,10 @@ main.addEventListener("click", () => {
     document.querySelector('.cursor').classList.toggle('fade');
     document.querySelector('.flex-r.whole').classList.toggle('fade');
   })
+
+  document.querySelector('.whole-h4').addEventListener('click',()=>{
+    document.querySelector('.m-menu-wrap').classList.toggle('fade');
+    document.querySelector('.m-menu').classList.toggle('fade');
+    document.querySelector('.cursor').classList.toggle('fade');
+    document.querySelector('.flex-r.whole').classList.toggle('fade');
+  })

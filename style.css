@@ -52,6 +52,7 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: #f0e9df;
 }
 
 a {
@@ -559,7 +560,7 @@ section h1 {
 .main4 .inner.split-c .grid-ri {
   grid-column: 3/4;
   grid-row: 2/3;
-  width: 100%;
+  width: 116%;
 }
 
 .main4 .inner.split-c {
@@ -588,10 +589,11 @@ section h1 {
 
 .main5 {
   padding: 3rem;
-  height: 500px;
+  height: 100%;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   background-color: #f0e9df;
   box-sizing: border-box;
+  margin-bottom: 7rem;
 }
 
 .main5 h4 {
@@ -612,13 +614,14 @@ section h1 {
 
 .main6 {
   padding: 3rem;
-  height: 800px;
+  height: 100%;
   grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1.4fr);
   background-color: #f0e9df;
   grid-template-rows: 25% 23% 33%;
   gap: 3rem;
   box-sizing: border-box;
 }
+
 
 .main6 .grid-le {
   grid-column: 1/ 2;
@@ -647,9 +650,14 @@ section h1 {
   padding-bottom: 1.5rem;
 }
 
+.main6 .grid-le .flex-end {
+  margin-top: 3rem;
+}
+
 .main6 .grid-ce {
   grid-column: 2/3;
   grid-row: 3/4;
+  margin-bottom: -3rem;
 }
 
 .main6 .grid-ce img {
@@ -660,6 +668,7 @@ section h1 {
 .main6 .grid-ri {
   grid-column: 3/4;
   grid-row: 1/4;
+  margin-bottom: -3rem;
 }
 
 .main6 .grid-ri img {
@@ -712,7 +721,14 @@ footer .sign-link {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0 15.9rem 0;
+  margin: 3rem auto 15.9rem auto;
+  width: 83.333333%;
+}
+
+footer .sign-link h4 {
+  font-weight: inherit;
+  width: 23.3%;
+  text-align: center;
 }
 
 footer .sign-link .link-form {
@@ -739,6 +755,7 @@ footer .sign-link p {
   width: 30.75rem;
   padding-bottom: 5rem;
   padding-top: 1rem;
+  text-align: center;
 }
 
 @keyframes colors {
@@ -860,9 +877,8 @@ footer .sign-link .link-form input[type="submit"] {
 
 .m-menu .flex-r.space-between .whole-h4 {
   padding-bottom: 2rem;
-  font-size: 1.4rem;
-  line-height: 16.8px;
   font-weight: inherit;
+  text-transform: uppercase;
 }
 
 .m-menu .flex-r.space-between .logo {
@@ -880,6 +896,10 @@ footer .sign-link .link-form input[type="submit"] {
 .m-menu .flex-r .logo {
   width: 14.2rem;
   height: 2rem;
+}
+
+.m-menu .whole-tit {
+  display: none;
 }
 
 .m-menu .grid-4 .flex-c ul li a {
@@ -900,7 +920,7 @@ footer .sign-link .link-form input[type="submit"] {
 
 .m-menu .grid-4 div h4 {
   padding-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: inherit;
   text-transform: uppercase;
 }
@@ -920,11 +940,35 @@ footer .sign-link .link-form input[type="submit"] {
   position: fixed;
   z-index: 11;
   bottom: 3rem;
+  transition: 1s;
+  animation: menu 1s ease-in;
 }
 
 .m-menu button:hover {
   transform: scale(1.05);
   /* transition: 0.5s; */
+}
+
+.m-menu .grid-4.forward-btn .whole-tit {
+  display: block;
+}
+
+.grid-4.forward-btn {
+  position: fixed;
+  bottom: 8rem;
+  left: 3rem;
+  z-index: 12;
+  width: 49%;
+  height: 7rem;
+  padding: 0;
+  background-color: rgb(84 57 57);
+  animation: menu 1s ease-in;
+  transition: 1s;
+}
+
+.m-menu.fade .grid-4.forward-btn {
+  left: -100%;
+  animation: menu 1s ease-out reverse;
 }
 
 /* .m-menu button:before {
@@ -960,6 +1004,8 @@ footer .sign-link .link-form input[type="submit"] {
 
 .m-menu .grid-4 div .flex-c a {
   color: inherit;
+  font-family: Object Sans Medium, times new roman;
+  font-size: 1.2rem;
 }
 
 .m-menu .grid-4 div .flex-c a h2 {
@@ -987,19 +1033,19 @@ footer .sign-link .link-form input[type="submit"] {
 }
 
 .m-menu.fade {
-  left: -40%;
+  left: -100%;
   top: 0;
   animation: menu 1s ease-out reverse;
   transition: 1s;
 }
 
 .m-menu.fade .m-menu-graident {
-  left: -40%;
+  left: -100%;
   animation: menu 0.4s ease-out reverse;
 }
 
 .m-menu.fade button {
-  left: -40%;
+  left: -100%;
   animation: menu 0.4s ease-out reverse;
 }
 
@@ -1009,18 +1055,22 @@ footer .sign-link .link-form input[type="submit"] {
   text-transform: uppercase;
 }
 
+.m-menu .grid-4.forward-btn .whole-tit .flex-c li a {
+  font-size: 1.4rem;
+  animation: menu1 1s ease-in;
+  text-transform: uppercase;
+}
+
 .m-menu-graident {
   position: fixed;
   bottom: 0;
   width: 30%;
-  height: 3rem;
-  /* background: linear-gradient(0deg,#543939, rgba(84, 57, 57, 0),  80%); */
+  height: 11rem;
   z-index: 11;
   left: 3rem;
   background: rgba(84, 57, 57);
-  /* background: linear-gradient(0deg, rgba(84, 57, 57, 0), #543939 80%);; */
-
-  /* backdrop-filter: blur(25px); */
+  transition: 1s;
+  animation: menu 1s ease-in;
 }
 
 .m-menu-graident:before {
@@ -1045,8 +1095,8 @@ footer .sign-link .link-form input[type="submit"] {
   right: 3rem;
   width: 400px;
   height: 46%;
-  margin-right: 1.5rem;
   transition: 0.5s;
+  justify-content: flex-end;
 }
 
 .flex-r.whole p {
@@ -1153,6 +1203,12 @@ footer .sign-link .link-form input[type="submit"] {
 @media screen and (max-width: 1199px) {
   .flex-r.whole {
     display: none;
+  }
+}
+
+@media screen and (max-width:1110px) {
+  footer .sign-link p{
+    width: 23.5%;
   }
 }
 
@@ -1479,7 +1535,9 @@ footer .sign-link .link-form input[type="submit"] {
   }
   .m-menu-graident {
     width: 60%;
+    height: 3rem;
   }
+
   .m-menu button {
     width: 60%;
   }
@@ -1491,10 +1549,30 @@ footer .sign-link .link-form input[type="submit"] {
   .m-menu .grid-4 img {
     width: 100%;
   }
+
+  .m-menu .grid-4 div h4 {
+    font-size: 1.2rem;
+  }
+
+  .m-menu .grid-4.forward-btn {
+    display: none;
+  }
+
+  .m-menu .flex-r.space-between .whole-h4 {
+    display: none;
+  }
+
+  .m-menu .flex-r.space-between .logo {
+    display: block;
+  }
+
+  .m-menu .flex-r.space-between .close-icon {
+    display: block;
+  }
 }
 
-@media screen and (max-width: 500px) {
-  main .sentences .visible h1 {
+@media screen and (max-width: 552px) {
+  /* main .sentences .visible h1 {
     font-size: 3.5rem;
   }
 
@@ -1504,5 +1582,16 @@ footer .sign-link .link-form input[type="submit"] {
 
   .main2.grid2 {
     height: 650px;
+  } */
+
+  .main3 .grid-p .inner {
+    grid-column: span 1 / span 1;
+  }
+  .main3 .grid-p .inner.start2 {
+    grid-column-start: auto;
+    grid-column: span 1 / span 1;
+  }
+  .main3 .grid-p {
+    margin-top: 3rem;
   }
 }
