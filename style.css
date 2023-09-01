@@ -554,12 +554,14 @@ section h1 {
 
 .main4 .inner img {
   width: calc(100% + 1px);
-  height: calc(100% + 1px);
+  height: auto;
+  max-height: calc(100%+1px);
 }
 
 .main4 .inner.split-c .grid-ri {
-  grid-column: 3/4;
+  grid-column: span 2/ span 2;
   grid-row: 2/3;
+  grid-column-start: 3;
   width: 116%;
 }
 
@@ -1141,6 +1143,12 @@ footer .sign-link .link-form input[type="submit"] {
   border-color: #fff;
 }
 
+@media screen and (max-width: 1550px) {
+  .grid-4.forward-btn{
+    width: 30%;
+  }
+}
+
 @media screen and (max-width: 1270px) {
   .header > ul.flex li a h4 {
     font-size: 1rem;
@@ -1198,6 +1206,7 @@ footer .sign-link .link-form input[type="submit"] {
   .m-menu button {
     width: 48.5%;
   }
+
 }
 
 @media screen and (max-width: 1199px) {
@@ -1209,6 +1218,10 @@ footer .sign-link .link-form input[type="submit"] {
 @media screen and (max-width:1110px) {
   footer .sign-link p{
     width: 23.5%;
+  }
+
+  .grid-4.forward-btn{
+    width: 49.5%;
   }
 }
 

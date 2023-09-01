@@ -161,30 +161,34 @@ main.addEventListener("click", () => {
   });
 
 
-  document.querySelector('header .flex.mobile li span').addEventListener('click',()=>{
+  document.querySelector('header .flex.mobile li span').addEventListener('click',(event)=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
     document.querySelector('.cursor').classList.toggle('fade');
     document.querySelector('.flex-r.whole').classList.toggle('fade');
+    event.preventDefault();
   })
   
-  document.querySelector('.m-menu .flex-r .close-icon span').addEventListener('click',()=>{
+  document.querySelector('.m-menu .flex-r .close-icon span').addEventListener('click',(event)=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
     document.querySelector('.cursor').classList.toggle('fade');
     document.querySelector('.flex-r.whole').classList.toggle('fade');
+    event.preventDefault();
   })
   
-  document.querySelector('.flex.header_none li ul li:first-child').addEventListener('click',()=>{
+  document.querySelector('.flex.header_none li ul li:first-child').addEventListener('click',(event)=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
     document.querySelector('.cursor').classList.toggle('fade');
     document.querySelector('.flex-r.whole').classList.toggle('fade');
+    event.preventDefault();
   })
 
-  document.querySelector('.whole-h4').addEventListener('click',()=>{
+  document.querySelector('.whole-h4').addEventListener('click',(event)=>{
     document.querySelector('.m-menu-wrap').classList.toggle('fade');
     document.querySelector('.m-menu').classList.toggle('fade');
     document.querySelector('.cursor').classList.toggle('fade');
     document.querySelector('.flex-r.whole').classList.toggle('fade');
+    event.preventDefault();
   })
